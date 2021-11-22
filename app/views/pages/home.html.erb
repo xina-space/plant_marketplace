@@ -1,14 +1,54 @@
+<div class="container">
 
-<div class="hero">
+  <div class="d-flex justify-content-center" id='hero' >
 
-  <div class="hero-left">
+    <div class="hero-left">
 
-    <h1>Pages#home</h1>
-    <p>Find me in app/views/pages/home.html.erb</p>
+      <h1>Green up your space</h1>
+      <p>Easy plant rental for those without roots.</p>
+      <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+      <%= f.input :category, input_html: {value: ""}, label: false, class: 'form-control-lg' %>
+      <%= f.submit "Search", class: "btn btn-primary" %>
+  <% end %>
+    </div>
+
+
+    <div class="hero-right">
+      <div>
+        <%= image_tag "releaf-homepage.png", class: 'hero-image' %>
+      </div>
+    </div>
+
   </div>
+</div>
 
-  <div class="hero-right">
-
+<div class="home-features">
+  <div class="container">
+    <h2>How it works</h2>
+    <%# <div class="feature-container"> %>
+      <div class="row align-items-start">
+          <div class="col"  id='feature'>
+          <i class="fas fa-search" id="feature-icon"></i>
+            <h3>Browse</h3>
+              <p class="">
+                Browse available plants for your selected timeframe.
+              </p>
+            </div>
+            <div class="col" id='feature'>
+              <i class="fas fa-check"></i>
+                <h3>Book</h3>
+                  <p class="">
+                    Pick it up from the owner. They'll give you the deets about the proper care for your bud-dy.
+                  </p>
+            </div>
+            <div class="col" id='feature'>
+            <i class="fas fa-seedling"></i>
+              <h3>Enjoy</h3>
+              <p class="">
+                Settle into your space with your new, green friend.
+              </p>
+            </div>
+        </div>
+    <%# </div> %>
   </div>
-
 </div>
