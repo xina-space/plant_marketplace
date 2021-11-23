@@ -1,0 +1,6 @@
+<% @bookings.each do |booking| %>
+<p><%= booking.plant.name %></p>
+<p><%= booking.user.email %></p>
+<p><%= booking.start_date %></p>
+<p><%= booking.end_date %></p>
+<% end %>
