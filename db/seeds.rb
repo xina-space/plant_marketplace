@@ -10,7 +10,6 @@ Plant.delete_all
 User.delete_all
 puts "CREATING DATA"
 
-
 user1 = User.new(email: "Paulo@qualqer.com", password: "123456")
 user1.save
 
