@@ -23,7 +23,7 @@ $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
 // Override other variables below!
-.btn-primary {
+.btn {
   border-bottom-right-radius: 15px!important;
   border-top-left-radius: 15px!important;
   border-bottom-left-radius: 0px!important;
@@ -44,4 +44,24 @@ $border-radius-sm: 2px;
   h1 {
     font-size: 5vh;
   }
+}
+
+.footer {
+  background: $light-gray;
+  display: flex;
+  border-top: 2px solid $green;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0px 50px;
+  color: rgba(0,0,0,0.3);
+}
+
+.footer-links a {
+  font-size: 28px;
+  padding: 8px;
+}
+
+.footer-copyright {
+  font-size: 12px;
 }
