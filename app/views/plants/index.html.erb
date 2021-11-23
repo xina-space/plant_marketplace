@@ -7,5 +7,18 @@
 <% end %>
 
 <% if policy(Plant).create? %>
-  <%= link_to "Add a new plant", new_plant_path %>
+  <%= link_to "Add a new plant", new_plant_path, class: 'btn btn-primary' %>
 <% end %>
+
+<div class="container">
+      <div class="row">
+         <% @plants.each do |plant| %>
+         <div class="card" style="width: 18rem;">
+          <%= image_tag 'succulent', class: 'card-img-top' %>
+            <h3 class="card-text"> <%= plant.species %> </h3>
+            <h2 class="card-title"><%= plant.name %></h2>
+            <p class="card-text"> <%= plant.description %> </p>
+         </div>
+         <% end %>
+      </div>
+   </div>
