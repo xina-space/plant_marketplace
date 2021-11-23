@@ -43,6 +43,7 @@ class PlantsController < ApplicationController
   def destroy
     authorize @plant
     @plant.destroy
+    redirect_to plants_path
   end
 
   private
