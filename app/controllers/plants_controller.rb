@@ -1,8 +1,8 @@
 class PlantsController < ApplicationController
   before_action :set_plant, only: %i[show edit update destroy]
   skip_before_action :authenticate_user!, only: [:index,:show]
+
   def index
-    @plants = Plant.all
     @plants = policy_scope(Plant).order(created_at: :desc)
   end
 
@@ -43,6 +43,7 @@ class PlantsController < ApplicationController
   def destroy
     authorize @plant
     @plant.destroy
+    redirect_to plants_path
   end
 
   private

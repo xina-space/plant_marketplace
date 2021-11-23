@@ -5,23 +5,23 @@ class PlantPolicy < ApplicationPolicy
     end
   end
 
-    def create?
-      return true
-    end
+  def create?
+    return true
+  end
 
-    def index
-      true
-    end
+  def index
+    true
+  end
 
-    def show?
-      true
-    end
+  def show?
+    true
+  end
 
-    def update?
-      record.user == user
-    end
+  def update?
+    record.user == user
+  end
 
-    def destroy?
-      record.user == user
-    end
+  def destroy?
+    record.user == user
+  end
 end

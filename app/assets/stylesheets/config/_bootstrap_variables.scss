@@ -12,7 +12,7 @@ $font-size-base: 1rem;
 // Colors
 $body-color: $gray;
 $primary:    $green;
-$success:    $green;
+$success:    $white;
 $info:       $yellow;
 $danger:     $red;
 $warning:    $orange;
@@ -63,4 +63,20 @@ $border-radius-sm: 2px;
 
 .footer-copyright {
   font-size: 12px;
+}
+
+#search_category {
+  width: 300px;
+  height: 40px;
+  border: 2px solid $green;
+  background-color: $white;
+  margin: 10px 10px 10px 0px;
+  border-bottom-right-radius: 0px!important;
+  border-top-left-radius: 15px!important;
+  border-bottom-left-radius: 0px!important;
+  border-top-right-radius: 0px!important;
+}
+
+a:hover, a:visited, a:focus {
+  text-decoration: none !important;
 }

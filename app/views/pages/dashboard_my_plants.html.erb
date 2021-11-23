@@ -1,0 +1,5 @@
+<% current_user.owned_plants.each do |plant| %>
+<p><%= plant.species %></p>
+<p><%= plant.name %></p>
+<p><%= plant.description %></p>
+<% end %>
