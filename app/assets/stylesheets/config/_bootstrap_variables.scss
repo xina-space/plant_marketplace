@@ -12,7 +12,7 @@ $font-size-base: 1rem;
 // Colors
 $body-color: $gray;
 $primary:    $green;
-$success:    $green;
+$success:    $white;
 $info:       $yellow;
 $danger:     $red;
 $warning:    $orange;
@@ -52,11 +52,6 @@ $border-radius-sm: 2px;
     text-decoration: none;
   }
 }
-
-.col {
-  align-items: left!important;
-}
-
 
 ::selection {
   background: $green;

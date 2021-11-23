@@ -1,4 +1,7 @@
-<h1>Edit your plant</h1>
+<div class="container py-3">
+  <%= link_to 'Back', plant_path(@plant), class:'btn btn-success' %>
 
-<%= render 'form', plant: @plant %>
-<%= link_to 'Back', plant_path(@plant) %>
+  <h1>Edit your plant</h1>
+
+  <%= render 'form', plant: @plant %>
+</div>
