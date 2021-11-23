@@ -11,7 +11,7 @@ $font-size-base: 1rem;
 
 // Colors
 $body-color: $gray;
-$primary:    $blue;
+$primary:    $green;
 $success:    $green;
 $info:       $yellow;
 $danger:     $red;
@@ -23,3 +23,25 @@ $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
 // Override other variables below!
+.btn-primary {
+  border-bottom-right-radius: 15px!important;
+  border-top-left-radius: 15px!important;
+  border-bottom-left-radius: 0px!important;
+  border-top-right-radius: 0px!important;
+}
+
+
+::selection {
+  background: $green;
+  color: $light-gray;
+}
+
+@media (max-width: 1024px) {
+  #hero {
+    flex-direction: column;
+    padding: 10px;
+  }
+  h1 {
+    font-size: 5vh;
+  }
+}
