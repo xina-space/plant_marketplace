@@ -1,0 +1,11 @@
+<p><% @plants.each do |plant| %></p>
+  <%= link_to plant.name, plant_path(plant) %>
+  <% if policy(plant).edit? %>
+    <%= link_to "Update", edit_plant_path(plant) %>
+  <%= link_to "Destroy", plant, method: :delete, data: {confirm: "Are you sure?"} %>
+  <% end %>
+<% end %>
+
+<% if policy(Plant).create? %>
+  <%= link_to "Add a new plant", new_plant_path %>
+<% end %>
