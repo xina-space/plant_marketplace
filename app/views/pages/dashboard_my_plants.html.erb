@@ -3,7 +3,9 @@
     <% current_user.owned_plants.each do |plant| %>
     <div class="col-lg-4 col-sm-12">
       <div class="card my-3">
-        <%= cl_image_tag plant.photos.first.key, class: 'card-img-top' %>
+        <% plant.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, class: 'card-img-top' %>
+        <% end %>
         <%# <%= image_tag 'succulent', class: 'card-img-top' %> %>
           <div class="card-body">
           <h3 class="card-text"> <%= plant.species %></h3>
