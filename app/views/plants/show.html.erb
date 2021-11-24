@@ -3,7 +3,8 @@
   <%= link_to "Back", plants_path, class: "btn btn btn-success mt-3" %>
   <div class="plant-content d-flex align-content-end flex-wrap">
     <div class="plant-image">
-      <%= image_tag 'succulent.jpg', class:'plant-show-image' %>
+    <%= cl_image_tag @plant.photos.first.key, class:'plant-show-image' %>
+      <%#= image_tag 'succulent.jpg', class:'plant-show-image' %>
     </div>
 
     <div class="plant-info my-auto">
