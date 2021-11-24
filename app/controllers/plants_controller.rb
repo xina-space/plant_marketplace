@@ -33,7 +33,7 @@ class PlantsController < ApplicationController
   def update
     @plant.update(plant_params)
     authorize @plant
-    if @plant.update
+    if @plant.update(plant_params)
       redirect_to plant_path(@plant)
     else
       render :edit
@@ -49,7 +49,7 @@ class PlantsController < ApplicationController
   private
 
   def plant_params
-    params.require(:plant).permit(:species, :name, :description)
+    params.require(:plant).permit(:species, :name, :description, photos: [])
   end
 
   def set_plant
