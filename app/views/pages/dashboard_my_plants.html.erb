@@ -1,5 +1,16 @@
-<% current_user.owned_plants.each do |plant| %>
-<p><%= plant.species %></p>
-<p><%= plant.name %></p>
-<p><%= plant.description %></p>
-<% end %>
+<div class="container">
+  <div class="row p-3">
+    <% current_user.owned_plants.each do |plant| %>
+    <div class="col-lg-4 col-sm-12">
+      <div class="card my-3">
+        <%= image_tag 'succulent', class: 'card-img-top' %>
+          <div class="card-body">
+          <h3 class="card-text"> <%= plant.species %></h3>
+          <h2 class="card-title"><%= plant.name %></h2>
+          <p class="card-text"> <%= plant.description %></p>
+      </div>
+    </div>
+      </div>
+    <% end %>
+  </div>
+</div>
