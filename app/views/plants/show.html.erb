@@ -10,12 +10,17 @@
       <h3><%= @plant.species %></h3>
         <h2><%= @plant.name %></h2>
         <p><%= @plant.description %></p>
+    <hr>
 
 
     <div class="show-buttons">
-      <%= link_to "Book now", dashboard_path, class: "btn btn-danger" %>
+     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+        Book now
+      </button>
     </div>
     </div>
   </div>
 
 </div>
+
+<%= render 'modal_new', plant: @plant, booking: @booking %>

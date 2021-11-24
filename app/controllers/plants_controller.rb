@@ -8,6 +8,7 @@ class PlantsController < ApplicationController
 
   def show
     authorize @plant
+    @booking = Booking.new
   end
 
   def new
