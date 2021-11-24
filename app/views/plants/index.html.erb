@@ -24,9 +24,9 @@
           <%= cl_image_tag plant.photos.first.key, class: 'card-img-top' %>
           <%#= image_tag 'succulent', class: 'card-img-top' %>
             <div class="card-body">
-              <h3 class="card-text"> <%= plant.species %> </h3>
+              <h3 class="card-text"> <%= plant.species %></h3>
               <h2 class="card-title"><%= plant.name %></h2>
-              <p class="card-text"> <%= plant.description %> </p>
+              <p class="card-text"> <%= plant.description %></p>
                 <% if policy(plant).edit? %>
                 <%= link_to "Update", edit_plant_path(plant), class:'btn btn-warning' %>
                 <%= link_to "Destroy", plant, method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-danger' %>
