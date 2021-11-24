@@ -1,14 +1,21 @@
+<div class="container" >
 
-<div class="container">
-  <div class="card-product">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-    <div class="card-product-info">
-      <h3><%= @plant.species %></h3>
-      <h2><%= @plant.name %></h2>
-      <p><%= @plant.description %></p>
+  <%= link_to "Back", plants_path, class: "btn btn btn-success mt-3" %>
+  <div class="plant-content d-flex align-content-end flex-wrap">
+    <div class="plant-image">
+      <%= image_tag 'succulent.jpg', class:'plant-show-image' %>
     </div>
-  <div class="book-btn">
-    <%= link_to "Book now", dashboard_path, class: "btn btn-danger" %>
-    <%= link_to "Back", plants_path, class: "btn btn btn-info" %>
+
+    <div class="plant-info my-auto">
+      <h3><%= @plant.species %></h3>
+        <h2><%= @plant.name %></h2>
+        <p><%= @plant.description %></p>
+
+
+    <div class="show-buttons">
+      <%= link_to "Book now", dashboard_path, class: "btn btn-danger" %>
+    </div>
+    </div>
   </div>
+
 </div>
