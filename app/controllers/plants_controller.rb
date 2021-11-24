@@ -4,6 +4,12 @@ class PlantsController < ApplicationController
 
   def index
     @plants = policy_scope(Plant).order(created_at: :desc)
+    @markers = @plants.geocoded.map do |plant|
+      {
+        lat: plant.latitude,
+        lng: plant.longitude
+      }
+    end
   end
 
   def show
@@ -49,7 +55,7 @@ class PlantsController < ApplicationController
   private
 
   def plant_params
-    params.require(:plant).permit(:species, :name, :description, photos: [])
+    params.require(:plant).permit(:species, :name, :description, :address, photos: [])
   end
 
   def set_plant
