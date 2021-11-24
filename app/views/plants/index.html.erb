@@ -21,7 +21,8 @@
          <div class="col-lg-4 col-sm-12">
           <div class="card my-3">
           <%= link_to plant_path(plant) do %>
-            <%= image_tag 'succulent', class: 'card-img-top' %>
+          <%= cl_image_tag plant.photos.first.key, class: 'card-img-top' %>
+          <%#= image_tag 'succulent', class: 'card-img-top' %>
             <div class="card-body">
               <h3 class="card-text"> <%= plant.species %> </h3>
               <h2 class="card-title"><%= plant.name %></h2>
