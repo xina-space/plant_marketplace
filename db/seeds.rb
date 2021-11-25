@@ -20,7 +20,7 @@ user3 = User.new(email: "kristina@qualqer.com", password: "123456")
 user3.save
 user4 = User.new(email: "alexandro@qualqer.com", password: "123456")
 user4.save
-plant1 = Plant.new(species: "Aloe Vera", name: "Cindy", address: "1600 Pennsylvania Avenue NW Washington, D.C. 20500 U.S.", description: "From curing heartburn to sunburn, you'll want to have cindy around. She's tought on the outside, soft on the inside and just makes a trustworthy companion to weather life's most unexpected outcomes", user_id: user1.id)
+plant1 = Plant.new(species: "Aloe Vera", name: "Cindy", address: "1600 Pennsylvania Avenue, 20500 Washington, United States", description: "From curing heartburn to sunburn, you'll want to have cindy around. She's tought on the outside, soft on the inside and just makes a trustworthy companion to weather life's most unexpected outcomes", user_id: user1.id)
 file = URI.open('https://www.kendallsflorist.co.uk/wp-content/uploads/2016/01/Aloe-Vera-Plant-1.jpg')
 plant1.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 plant1.save
@@ -32,11 +32,11 @@ plant3 = Plant.new(species: "Dracaena", name: "Tusk", address: "Bundesplatz 3, 3
 file = URI.open('https://cdn.thecolvinco.com/photos_cache_thumb/xl-drake/xl-drake-6980797f-7b94-4b35-9820-3adebb3f046e.jpg')
 plant3.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 plant3.save
-plant4 = Plant.new(species: "Yucca", name: "Mona", address: "1 Sheikh Mohammed bin Rashid Blvd - Downtown Dubai - Dubai - United Arab Emirates", description: "She comes from the Desert. She's tought as nails. She was also seen on The Good, the Bad and the Ugly", user_id: user1.id)
+plant4 = Plant.new(species: "Yucca", name: "Mona", address: "1 Sheikh Mohammed bin Rashid Blvd, 1000 Dubai, United Arab Emirates", description: "Her roots lie withing the Desert. She's the quickest shot of the West. She was also seen on The Good, the Bad and the Ugly", user_id: user1.id)
 file = URI.open('https://tpn-1.s3.eu-west-2.amazonaws.com/media/217/217-Page38-anca-gabriela-zosin-f3e9p4-lqRw-unsplash.jpeg')
 plant4.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 plant4.save
-plant5 = Plant.new(species: "Ficus", name: "Bruce", address: "4 Jingshan Front St, Dongcheng, Beijing Shi, China, 100886", description: "Don't let his looks decieve you. Bruce is a ninja. Adapts to any corner, lounge, bathroom and bedroom. His moto: Be water my friend", user_id: user1.id)
+plant5 = Plant.new(species: "Ficus", name: "Bruce", address: "Rua do Conde de Redondo 91B, 1150-103 Lisboa, Portugal", description: "Don't let his looks decieve you. Bruce is a ninja. Adapts to any corner, lounge, bathroom and bedroom. His moto: Be water my friend", user_id: user1.id)
 file = URI.open('https://bloomscape.com/wp-content/uploads/2020/05/bloomscape_ficus-altissima-std_charcoal.jpg')
 plant5.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 plant5.save

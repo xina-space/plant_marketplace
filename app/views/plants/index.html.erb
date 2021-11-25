@@ -26,11 +26,15 @@
          <div class="col-lg-4 col-sm-12">
           <div class="card my-3">
           <%= link_to plant_path(plant) do %>
-          <%= cl_image_tag plant.photos.first.key, class: 'card-img-top' %>
-          <%#= image_tag 'succulent', class: 'card-img-top' %>
+          <% if plant.photos.attached? %>
+            <%= cl_image_tag plant.photos.first.key, class: 'card-img-top' %>
+          <% else %>
+            <%= image_tag 'succulent', class: 'card-img-top' %>
+          <% end %>
             <div class="card-body">
               <h3 class="card-text"> <%= plant.species %></h3>
               <h2 class="card-title"><%= plant.name %></h2>
+              <p><strong><%= plant.address %></strong></p>
               <p class="card-text"> <%= plant.description %></p>
                 <% if policy(plant).edit? %>
                 <%= link_to "Update", edit_plant_path(plant), class:'btn btn-warning' %>
