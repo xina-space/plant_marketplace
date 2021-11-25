@@ -15,9 +15,13 @@
 
 
     <div class="show-buttons">
-     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+      <% if @plant.user_id == current_user.id %>
+        <%= "" %>
+      <% else %>
+      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
         Book now
       </button>
+      <% end %>
     </div>
     </div>
   </div>
