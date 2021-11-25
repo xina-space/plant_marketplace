@@ -4,14 +4,16 @@ class PlantsController < ApplicationController
 
   def index
       if params[:query].present?
-        @plants = policy_scope(Plant.search_by_name_species(params[:query]))
+        @plants = policy_scope(Plant.search_by_name_species_address(params[:query]))
       else
         @plants = policy_scope(Plant).order(created_at: :desc)
       end
       @markers = @plants.geocoded.map do |plant|
       {
         lat: plant.latitude,
-        lng: plant.longitude
+        lng: plant.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { plant: plant }),
+        image_url: helpers.asset_url('pot-plant.svg')
       }
       end
   end
