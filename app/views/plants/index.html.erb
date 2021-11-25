@@ -34,11 +34,11 @@
             <div class="card-body">
               <h3 class="card-text"> <%= plant.species %></h3>
               <h2 class="card-title"><%= plant.name %></h2>
-              <p><strong><%= plant.address %></strong></p>
-              <p class="card-text"> <%= plant.description %></p>
+
+              <p class="card-text"> <%#= plant.description %></p>
                 <% if policy(plant).edit? %>
-                <%= link_to "Update", edit_plant_path(plant), class:'btn btn-warning' %>
-                <%= link_to "Destroy", plant, method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-danger' %>
+                <%= link_to "Edit", edit_plant_path(plant), class: 'btn-ghost' %>
+                <%= link_to "Delete", plant, method: :delete, data: {confirm: "Are you sure?"}, class: 'btn-ghost' %>
                 <% end %>
             </div>
          </div>
