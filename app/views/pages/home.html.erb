@@ -5,16 +5,18 @@
     <div class="hero-left">
       <h1>Green up your space</h1>
       <p>Easy plant rental for those without roots.</p>
-      <%= simple_form_for :search, url: plants_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-      <%= f.input :category, input_html: {value: ""}, label: false, class: 'form-control-lg' %>
-      <%= f.submit "Search", class: "btn btn-primary" %>
-  <% end %>
 
-    <%# <form>
-    <%= form_tag({:controller => "plants", :action => "index"}, method: :get) do %>
-         <%#= text_field_tag :query, params[:query], {:class =>"search-query", :placeholder=>"Search"}  %>
-        <%# end %>
-    <%# </form> %>
+      <%= form_tag plants_path, method: :get do%>
+        <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Look for a plant" %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <%end%>
+
+      <%#= simple_form_for :search, url: plants_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+      <%#= f.input :category, input_html: {value: ""}, label: false, class: 'form-control-lg' %>
+      <%#= f.submit "Search", class: "btn btn-primary" %>
+  <%# end %>
+
+
     </div>
 
 
