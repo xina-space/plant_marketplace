@@ -1,6 +1,21 @@
-<% @bookings.each do |booking| %>
-<p><%= booking.plant.name %></p>
-<p><%= booking.user.email %></p>
-<p><%= booking.start_date %></p>
-<p><%= booking.end_date %></p>
+<% if !@bookings.empty? %>
+  <h2>Pedidos enviados - Plantas de outros</h2>
+  <% @bookings.each do |booking| %>
+  <p><%= booking.plant.name %></p>
+  <p>Owner: <%= booking.plant.user.email %></p>
+  <p><%= booking.start_date %></p>
+  <p><%= booking.end_date %></p>
+  <% end %>
+<% end %>
+
+<% if !@bookings.empty? %>
+  <h2>Pedidos recebidos - As minhas plantas</h2>
+  <% @bookings_received.each do |booking_rec| %>
+  <% if booking_rec.plant.user.email == current_user.email %>
+  <p><%= booking_rec.plant.name %></p>
+  <p>User: <%= booking_rec.user.email %></p>
+  <p><%= booking_rec.start_date %></p>
+  <p><%= booking_rec.end_date %></p>
+  <% end %>
+  <% end %>
 <% end %>
