@@ -1,27 +1,44 @@
 <div class="container" >
 
   <%= link_to "Back", plants_path, class: "btn btn btn-success mt-3" %>
-  <div class="plant-content d-flex align-content-end flex-wrap">
+  <div class="plant-content d-sm-flex align-content-center flex-wrap">
     <div class="plant-image">
     <%= cl_image_tag @plant.photos.first.key, class:'plant-show-image' %>
       <%#= image_tag 'succulent.jpg', class:'plant-show-image' %>
     </div>
 
-    <div class="plant-info my-auto">
+    <div class="plant-info my-auto bd-highlight">
       <h3><%= @plant.species %></h3>
         <h2><%= @plant.name %></h2>
+        <p><strong><%= @plant.address %></strong></p>
         <p><%= @plant.description %></p>
     <hr>
 
 
     <div class="show-buttons">
-     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+      <% if @plant.user_id == current_user.id %>
+        <%= "" %>
+      <% else %>
+      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
         Book now
       </button>
+      <% end %>
     </div>
     </div>
   </div>
 
+  <div class="show-gallery">
+    <div class="row p-3">
+      <% @plant.photos.all.each do |photo| %>
+        <div class="col-lg-1 col-sm-12">
+          <%= link_to '#plant-gallery-image', 'data-toggle' => 'modal' do %>
+            <%= cl_image_tag photo.key, class:'plant-gallery-image' %>
+          <% end %>
+        </div>
+        <% end %>
+    </div>
+  </div>
 </div>
 
 <%= render 'modal_new', plant: @plant, booking: @booking %>
+<%= render 'modal_gallery', plant: @plant %>

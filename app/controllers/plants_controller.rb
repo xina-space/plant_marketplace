@@ -1,17 +1,21 @@
 class PlantsController < ApplicationController
   before_action :set_plant, only: %i[show edit update destroy]
-  skip_before_action :authenticate_user!, only: [:index,:show]
+  skip_before_action :authenticate_user!, only: %i[index]
 
   def index
-    @plants = policy_scope(Plant).order(created_at: :desc)
-    @markers = @plants.geocoded.map do |plant|
+      if params[:query].present?
+        @plants = policy_scope(Plant.search_by_name_species_address(params[:query]))
+      else
+        @plants = policy_scope(Plant).order(created_at: :desc)
+      end
+      @markers = @plants.geocoded.map do |plant|
       {
         lat: plant.latitude,
         lng: plant.longitude,
         info_window: render_to_string(partial: "info_window", locals: { plant: plant }),
         image_url: helpers.asset_url('pot-plant.svg')
       }
-    end
+      end
   end
 
   def show

@@ -2,7 +2,7 @@
   // width: 80%;
   border-bottom-right-radius: 100px!important;
   border-top-left-radius: 100px!important;
-  // width: 100%;
+  width: 100%;
   height: 40rem;
   object-fit: cover;
   width: 30rem;
@@ -25,4 +25,87 @@
   background-color: $white;
   border-bottom-right-radius: 100px!important;
   border-top-left-radius: 100px!important;
+}
+
+.plant-gallery-image {
+  width: 100%;
+  object-fit: cover;
+  // width: 18rem;
+  border-bottom-right-radius: 50px!important;
+  border-top-left-radius: 50px!important;
+}
+
+.slideshow-image {
+  // width: 500px;
+  min-width: 100%;
+  object-fit: cover;
+  // position: fixed;
+}
+
+.modal-content {
+  // border-bottom-right-radius: 50px!important;
+  // border-top-left-radius: 50px!important;
+  background-color: none;
+  // max-width: 80vh;
+}
+
+
+
+@media (max-width: 988px) {
+  .plant-content {
+    // width: 80%;
+    width: 100%;
+    // width: 35rem;
+    margin: 10px;
+  }
+  .plant-show-image {
+    // width: 35rem;
+    // width: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .plant-content {
+    // width: 80%;
+    width: 90%;
+    // width: 35rem;
+    margin: 10px;
+  }
+  .plant-show-image {
+    // width: 35rem;
+    // width: 100%;
+    width: 100%;
+    // height: 40rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .plant-content {
+    // width: 20rem;
+    width: 90%;
+    margin: 10px;
+  }
+  .plant-show-image {
+    // width: 20rem;
+    width: 100%;
+    height: 20rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .plant-content {
+    width: 90%;
+    margin: 10px;
+    // width: 16rem;
+    // margin: 10px;
+  }
+  .plant-show-image {
+    width: 100%;
+    // width: 16rem;
+    height: 20rem;
+  }
+  .carousel {
+    display: none;
+  }
 }

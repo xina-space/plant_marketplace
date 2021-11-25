@@ -5,6 +5,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @bookings = current_user.bookings
+    @bookings_received = Booking.all
   end
 
   def dashboard_my_plants
