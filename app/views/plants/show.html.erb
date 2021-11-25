@@ -27,9 +27,13 @@
   </div>
 
   <div class="show-gallery">
-  <%= @plant.photos.all.each do |photo| %>
-  <%= cl_image_tag @plant.photo.key, class:'plant-show-image' %>
-  <% end %>
+    <div class="row p-3">
+      <% @plant.photos.all.each do |photo| %>
+        <div class="col-lg-1 col-sm-12">
+          <%= cl_image_tag photo.key, class:'plant-gallery-image' %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
 
