@@ -1,6 +1,6 @@
 class PlantsController < ApplicationController
   before_action :set_plant, only: %i[show edit update destroy]
-  skip_before_action :authenticate_user!, only: [:index,:show]
+  skip_before_action :authenticate_user!, only: %i[index]
 
   def index
       if params[:query].present?
