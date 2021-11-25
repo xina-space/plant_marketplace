@@ -1,7 +1,7 @@
 <div class="container" >
 
   <%= link_to "Back", plants_path, class: "btn btn btn-success mt-3" %>
-  <div class="plant-content d-sm-flex align-content-end flex-wrap">
+  <div class="plant-content d-sm-flex align-content-center flex-wrap">
     <div class="plant-image">
     <%= cl_image_tag @plant.photos.first.key, class:'plant-show-image' %>
       <%#= image_tag 'succulent.jpg', class:'plant-show-image' %>
@@ -26,6 +26,11 @@
     </div>
   </div>
 
+  <div class="show-gallery">
+  <%= @plant.photos.all.each do |photo| %>
+  <%= cl_image_tag @plant.photo.key, class:'plant-show-image' %>
+  <% end %>
+  </div>
 </div>
 
 <%= render 'modal_new', plant: @plant, booking: @booking %>
