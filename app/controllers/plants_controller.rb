@@ -4,7 +4,7 @@ class PlantsController < ApplicationController
 
   def index
       if params[:query].present?
-        @plants = policy_scope(Plant.search_by_name_species(params[:query]))
+        @plants = policy_scope(Plant.search_by_name_species_address(params[:query]))
       else
         @plants = policy_scope(Plant).order(created_at: :desc)
       end
