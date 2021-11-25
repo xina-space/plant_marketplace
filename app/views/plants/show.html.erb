@@ -1,13 +1,13 @@
 <div class="container" >
 
   <%= link_to "Back", plants_path, class: "btn btn btn-success mt-3" %>
-  <div class="plant-content d-flex align-content-end flex-wrap">
+  <div class="plant-content d-sm-flex align-content-end flex-wrap">
     <div class="plant-image">
     <%= cl_image_tag @plant.photos.first.key, class:'plant-show-image' %>
       <%#= image_tag 'succulent.jpg', class:'plant-show-image' %>
     </div>
 
-    <div class="plant-info my-auto">
+    <div class="plant-info my-auto bd-highlight">
       <h3><%= @plant.species %></h3>
         <h2><%= @plant.name %></h2>
         <p><%= @plant.description %></p>
