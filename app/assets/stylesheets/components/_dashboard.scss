@@ -1,0 +1,47 @@
+#dash-card {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  .card-img-top {
+    height: 30rem;
+  }
+}
+
+.top-card {
+  position: absolute;
+  border-top-left-radius: 100px!important;
+  // border-bottom-left-radius: 100px!important;
+  border-bottom-right-radius: 100px!important;
+  height: 15%;
+  width: 100%;
+  background-color: $green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top:0;
+  right:0;
+  // margin-left: 170px;
+}
+
+.inside-top-card {
+  color: $white;
+  font-family: $body-font;
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.top-card-book-received {
+  position: absolute;
+  border-top-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  height: 15%;
+  width: 100%;
+  background-color: $red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top:0;
+  right:0;
+}
