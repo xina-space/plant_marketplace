@@ -20,6 +20,7 @@ user3 = User.new(email: "kristina@qualqer.com", password: "123456")
 user3.save
 user4 = User.new(email: "alexandro@qualqer.com", password: "123456")
 user4.save
+
 plant1 = Plant.new(species: "Aloe Vera", name: "Cindy", address: "1600 Pennsylvania Avenue, 20500 Washington, United States", description: "From curing heartburn to sunburn, you'll want to have cindy around. She's tought on the outside, soft on the inside and just makes a trustworthy companion to weather life's most unexpected outcomes", user_id: user1.id)
 file = URI.open('https://www.kendallsflorist.co.uk/wp-content/uploads/2016/01/Aloe-Vera-Plant-1.jpg')
 plant1.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
