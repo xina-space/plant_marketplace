@@ -30,11 +30,14 @@
     <div class="row p-3">
       <% @plant.photos.all.each do |photo| %>
         <div class="col-lg-1 col-sm-12">
-          <%= cl_image_tag photo.key, class:'plant-gallery-image' %>
+          <%= link_to '#plant-gallery-image', 'data-toggle' => 'modal' do %>
+            <%= cl_image_tag photo.key, class:'plant-gallery-image' %>
+          <% end %>
         </div>
-      <% end %>
+        <% end %>
     </div>
   </div>
 </div>
 
 <%= render 'modal_new', plant: @plant, booking: @booking %>
+<%= render 'modal_gallery', plant: @plant %>
