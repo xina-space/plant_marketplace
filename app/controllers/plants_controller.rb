@@ -3,13 +3,17 @@ class PlantsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index,:show]
 
   def index
-    @plants = policy_scope(Plant).order(created_at: :desc)
-    @markers = @plants.geocoded.map do |plant|
+      if params[:query].present?
+        @plants = policy_scope(Plant.search_by_name_species(params[:query]))
+      else
+        @plants = policy_scope(Plant).order(created_at: :desc)
+      end
+      @markers = @plants.geocoded.map do |plant|
       {
         lat: plant.latitude,
         lng: plant.longitude
       }
-    end
+      end
   end
 
   def show

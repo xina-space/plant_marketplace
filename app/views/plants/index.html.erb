@@ -2,10 +2,15 @@
 <div class="container">
 <div class="index-top d-flex justify-content-xl-between py-3">
 
-  <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-    <%= f.input :category, input_html: {value: ""}, label: false, class: 'form-control-lg', id:"search_category" %>
-    <%= f.submit "Search", class: "btn btn-primary" %>
-  <% end %>
+  <%#= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+    <%#= f.input :category, input_html: {value: ""}, label: false, class: 'form-control-lg', id:"search_category" %>
+    <%#= f.submit "Search", class: "btn btn-primary" %>
+  <%# end %>
+
+    <%= form_tag plants_path, method: :get, class: 'form-inline' do%>
+        <%= text_field_tag :query, params[:query], class: "form-control-lg", id:"search_category", placeholder: "Look for a plant" %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <%end%>
 
   <% if policy(Plant).create? %>
     <%= link_to "Add a new plant", new_plant_path, class: 'btn btn-primary my-auto' %>
