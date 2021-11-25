@@ -19,6 +19,8 @@ class PlantsController < ApplicationController
   def show
     authorize @plant
     @booking = Booking.new
+    # @reviews_last = Review.last(3)
+    @reviews_last = @plant.reviews.last(3)
   end
 
   def new
