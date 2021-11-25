@@ -35,6 +35,21 @@
   border-top-left-radius: 50px!important;
 }
 
+.slideshow-image {
+  // width: 500px;
+  min-width: 100%;
+  object-fit: cover;
+  // position: fixed;
+}
+
+.modal-content {
+  // border-bottom-right-radius: 50px!important;
+  // border-top-left-radius: 50px!important;
+  background-color: none;
+  // max-width: 80vh;
+}
+
+
 
 @media (max-width: 988px) {
   .plant-content {
@@ -89,5 +104,8 @@
     width: 100%;
     // width: 16rem;
     height: 20rem;
+  }
+  .carousel {
+    display: none;
   }
 }
