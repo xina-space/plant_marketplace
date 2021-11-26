@@ -23,6 +23,7 @@
   </div>
       <div class="row p-3">
          <% @plants.each do |plant| %>
+         <% if plant.user_id != current_user.id %>
          <div class="col-lg-4 col-sm-12">
           <div class="card my-3">
           <%= link_to plant_path(plant) do %>
@@ -41,9 +42,10 @@
                 <%= link_to "Delete", plant, method: :delete, data: {confirm: "Are you sure?"}, class: 'btn-ghost' %>
                 <% end %>
             </div>
+         <% end %>
+         </div>
          </div>
             <% end %>
-         </div>
          <% end %>
       </div>
    </div>
