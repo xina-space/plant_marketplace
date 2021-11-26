@@ -19,8 +19,8 @@
               <p><%= plant.price %>€/day</p>
             </div>
           </div>
-          <%= link_to "Update", edit_plant_path(plant), class:'btn btn-warning' %>
-          <%= link_to "Destroy", @plant, method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-danger' %>
+          <%= link_to "Update", edit_plant_path(plant), class:'btn btn-ghost' %>
+          <%= link_to "Destroy", @plant, method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-ghost' %>
       </div>
       <% end %>
     </div>
