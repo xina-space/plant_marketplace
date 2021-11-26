@@ -24,7 +24,7 @@ user4.save
 
 puts "#{User.count} users created"
 
-plant1 = Plant.new(species: "Aloe Vera", name: "Cindy", address: "1600 Pennsylvania Avenue, 20500 Washington, United States", description: "From curing heartburn to sunburn, you'll want to have cindy around. She's tought on the outside, soft on the inside and just makes a trustworthy companion to weather life's most unexpected outcomes", user_id: user1.id, price: 12.90)
+plant1 = Plant.new(species: "Aloe Vera", name: "Cindy", address: "Rua de Santa Catarina, Sines, Portugal", description: "From curing heartburn to sunburn, you'll want to have cindy around. She's tought on the outside, soft on the inside and just makes a trustworthy companion to weather life's most unexpected outcomes", user_id: user1.id, price: 12.90)
 file = URI.open('https://www.kendallsflorist.co.uk/wp-content/uploads/2016/01/Aloe-Vera-Plant-1.jpg')
 plant1.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 plant1.save
@@ -36,7 +36,7 @@ plant3 = Plant.new(species: "Dracaena", name: "Tusk", address: "Bundesplatz 3, 3
 file = URI.open('https://cdn.thecolvinco.com/photos_cache_thumb/xl-drake/xl-drake-6980797f-7b94-4b35-9820-3adebb3f046e.jpg')
 plant3.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 plant3.save
-plant4 = Plant.new(species: "Yucca", name: "Mona", address: "1 Sheikh Mohammed bin Rashid Blvd, 1000 Dubai, United Arab Emirates", description: "Her roots lie withing the Desert. She's the quickest shot of the West. She was also seen on The Good, the Bad and the Ugly", user_id: user2.id, price: 9.99)
+plant4 = Plant.new(species: "Yucca", name: "Mona", address: "Madrid, Spain", description: "Her roots lie withing the Desert. She's the quickest shot of the West. She was also seen on The Good, the Bad and the Ugly", user_id: user2.id, price: 9.99)
 file = URI.open('https://tpn-1.s3.eu-west-2.amazonaws.com/media/217/217-Page38-anca-gabriela-zosin-f3e9p4-lqRw-unsplash.jpeg')
 plant4.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 plant4.save
