@@ -17,12 +17,20 @@
                   <h3 class="card-text"> <%= booking.plant.species %></h3>
                   <h2 class="card-title"><%= booking.plant.name %></h2>
                   <% booking_days = booking.end_date - booking.start_date %>
-                  <p>Rental: <%= booking_days.to_i %> days</p>
-                  <p>Total price: <%= booking_days.to_i * booking.plant.price %>€</p>
                 </div>
                 <div class="description mx-4">
-                  <p class="card-text pb-3 border-bottom border-cool"> <%= booking.plant.description %></p>
-                  <p>Owner contact | <%= booking.plant.user.email %></p>
+                  <p class="card-text mb-4 pb-4 border-bottom border-cool"> <%= booking.plant.description %></p>
+
+                    <div class="booking-details d-flex">
+                      <div class="price-tag-dash">
+                        <p><%= booking_days.to_i * booking.plant.price %>€/day</p>
+                      </div>
+                      <div class="rental-duration">
+                        <p>For <%= booking_days.to_i %> days</p>
+                      </div>
+                    </div>
+
+                  <p class='my-4'>From <%= booking.plant.user.email.capitalize.match(/^\w*/) %> | <%= booking.plant.user.email %></p>
                 </div>
                 </div>
             </div>
@@ -49,13 +57,22 @@
                 <div class="title pr-4">
                   <h3 class="card-text"> <%= booking.plant.species %></h3>
                   <h2 class="card-title"><%= booking.plant.name %></h2>
-                  <% booking_days = booking.end_date - booking.start_date %>
-                  <p>Rental: <%= booking_days.to_i %> days</p>
-                  <p>Total price: <%= booking_days.to_i * booking.plant.price %>€</p>
+
                 </div>
                 <div class="description mx-4">
-                  <p class="card-text pb-3 border-bottom border-cool"> <%= booking.plant.description %></p>
-                  <p>Rented by <%= booking.user.email.capitalize.match(/^\w*/) %> | <%= booking.user.email %></p>
+                  <p class="card-text  mb-4 pb-4 border-bottom border-cool"> <%= booking.plant.description %></p>
+
+                  <div class="booking-details d-flex">
+                      <div class="price-tag-dash" id="out-rented">
+                        <% booking_days = booking.end_date - booking.start_date %>
+                        <p><%= booking_days.to_i * booking.plant.price %>€/day</p>
+                      </div>
+                      <div class="rental-duration">
+                        <p>For <%= booking_days.to_i %> days</p>
+                      </div>
+                    </div>
+
+                  <p class="my-4">Rented by <%= booking.user.email.capitalize.match(/^\w*/) %> | <%= booking.user.email %></p>
                 </div>
                 </div>
             </div>

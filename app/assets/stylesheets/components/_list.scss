@@ -1,0 +1,26 @@
+#index-card {
+  display: flex;
+  justify-content: left;
+}
+
+.price-tag {
+  position: absolute;
+  // border-radius: 50%;
+  border-top-left-radius: 100px!important;
+  border-bottom-right-radius: 100px!important;
+  height: 40%;
+  width: 40%;
+  // border: 1px solid $white;
+  background-color: $green;
+  color: $light-gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom:0;
+  right:0;
+  p {
+    margin: 0;
+    font-weight: 500;
+    font-size: 25px;
+  }
+}

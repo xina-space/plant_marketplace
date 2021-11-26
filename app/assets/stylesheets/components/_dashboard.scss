@@ -45,3 +45,43 @@
   top:0;
   right:0;
 }
+
+.booking-details {
+  display: flex;
+}
+
+.price-tag-dash {
+  border-top-left-radius: 100px!important;
+  border-bottom-right-radius: 100px!important;
+  // border: 1px solid $green;
+  background-color: $green;
+  color: $white;
+  // border-radius: 5px;
+  padding: 10px 40px;
+  align-items: center;
+  justify-content: center;
+  p {
+    margin-bottom: 0;
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+}
+
+.rental-duration {
+  border-top-left-radius: 100px!important;
+  border-bottom-right-radius: 100px!important;
+  background-color: $light-gray;
+  // border: 1px solid $green;
+  color: $green;
+  // border-radius: 5px;
+  padding: 10px 40px;
+  align-items: center;
+  justify-content: center;
+  p {
+    margin-bottom: 0;
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+}
