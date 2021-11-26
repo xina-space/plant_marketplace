@@ -55,7 +55,7 @@
                 </div>
                 <div class="description mx-4">
                   <p class="card-text pb-3 border-bottom border-cool"> <%= booking.plant.description %></p>
-                  <p>Owner contact | <%= booking.plant.user.email %></p>
+                  <p>Rented by <%= booking.user.email.capitalize.match(/^\w*/) %> | <%= booking.user.email %></p>
                 </div>
                 </div>
             </div>

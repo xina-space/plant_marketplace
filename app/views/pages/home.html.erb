@@ -3,11 +3,10 @@
   <div class="d-flex justify-content-center" id='hero' >
 
     <div class="hero-left">
-      <h1>Green up your space</h1>
-      <p>Easy plant rental for those without roots.</p>
-
+      <h1 class="my-4">Green up your space</h1>
+      <p class="my-4">Easy plant rental for those without roots.</p>
       <%= form_tag plants_path, method: :get do%>
-        <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Look for a plant" %>
+        <%= text_field_tag :query, params[:query], class: "form-control my-2", placeholder: "Look for a plant" %>
         <%= submit_tag "Search", class: "btn btn-primary" %>
       <%end%>
 
