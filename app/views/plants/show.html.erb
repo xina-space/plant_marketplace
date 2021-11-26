@@ -1,7 +1,7 @@
 <div class="container" >
 
   <%= link_to "Back", plants_path, class: "btn btn btn-success mt-3" %>
-  <div class="plant-content d-sm-flex align-content-center flex-wrap">
+  <div class="plant-content d-sm-flex align-content-center">
     <div class="plant-image">
     <%= cl_image_tag @plant.photos.first.key, class:'plant-show-image' %>
       <%#= image_tag 'succulent.jpg', class:'plant-show-image' %>
@@ -23,15 +23,7 @@
       <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
         Book now
       </button>
-      <%= link_to 'Add a review', new_plant_review_path(@plant) %>
-      <% end %>
-    </div>
-    <div class="show-reviews">
-      <% @reviews_last.each do |rev| %>
-        <p><strong><%= rev.user.email %>
-        <br>
-        </strong><em>Review: "<%= rev.content %>"</em> |
-        Rating: <strong><%= rev.rating%></strong>⭐</p>
+      <%= link_to 'Add a review', new_plant_review_path(@plant), class:"btn btn-outline-danger ml-2" %>
       <% end %>
     </div>
     </div>
@@ -48,7 +40,17 @@
         <% end %>
     </div>
   </div>
-</div>
 
+    <div class="show-reviews m-3">
+      <% @reviews_last.each do |rev| %>
+      <div class="review">
+        <br>
+        <p><%= "<i class='fas fa-star' id='star'></i>".html_safe * rev.rating %><%= "<i class='far fa-star' id='star'></i>".html_safe * (5 - rev.rating) %></p>
+        <em><%= rev.content %></em>
+        <p class='mt-3'>- <%= rev.user.email.capitalize.match(/^\w*/) %>
+      </div>
+      <% end %>
+    </div>
+</div>
 <%= render 'modal_new', plant: @plant, booking: @booking %>
 <%= render 'modal_gallery', plant: @plant %>
