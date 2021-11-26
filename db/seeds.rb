@@ -24,7 +24,7 @@ user4.save
 
 puts "#{User.count} users created"
 
-plant1 = Plant.new(species: "Aloe Vera", name: "Cindy", address: "Rua de Santa Catarina, Sines, Portugal", description: "From curing heartburn to sunburn, you'll want to have cindy around. She's tought on the outside, soft on the inside and just makes a trustworthy companion to weather life's most unexpected outcomes", user_id: user1.id, price: 12.90)
+plant1 = Plant.new(species: "Aloe Vera", name: "Cindy", address: "R. do Bolhão, Porto, Portugal", description: "From curing heartburn to sunburn, you'll want to have cindy around. She's tought on the outside, soft on the inside and just makes a trustworthy companion to weather life's most unexpected outcomes", user_id: user1.id, price: 12.90)
 file = URI.open('https://www.kendallsflorist.co.uk/wp-content/uploads/2016/01/Aloe-Vera-Plant-1.jpg')
 plant1.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 plant1.save
