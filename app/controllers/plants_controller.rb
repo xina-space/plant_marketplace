@@ -9,12 +9,12 @@ class PlantsController < ApplicationController
       search_not_login
     end
     @markers = @plants.geocoded.map do |plant|
-    {
-      lat: plant.latitude,
-      lng: plant.longitude,
-      info_window: render_to_string(partial: "info_window", locals: { plant: plant }),
-      image_url: helpers.asset_url('pot-plant.svg')
-    }
+      {
+        lat: plant.latitude,
+        lng: plant.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { plant: plant }),
+        image_url: helpers.asset_url('pot-plant.svg')
+      }
     end
   end
 
