@@ -20,9 +20,10 @@
         <%= link_to "Update", edit_plant_path(@plant), class:'btn btn-warning' %>
         <%= link_to "Destroy", @plant, method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-danger' %>
       <% else %>
-      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+      <%= <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
         Book now
-      </button>
+      </button> %>
+      <%# <button id="sweet-alert-demo" class="btn btn-danger">Book now</button> %>
       <%= link_to 'Add a review', new_plant_review_path(@plant), class:"btn btn-outline-danger ml-2" %>
       <% end %>
     </div>
