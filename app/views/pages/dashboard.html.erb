@@ -1,7 +1,6 @@
 <div class="container">
   <div class="bookings-placed border-bottom border-primary my-4">
 
-    <% if !@bookings.empty? %>
       <h1 class="p-3">Bookings placed</h1>
       <div class="row">
             <% @bookings.each do |booking| %>
@@ -27,13 +26,11 @@
                 <% end %>
             </div>
             <% end %>
-    <% end %>
   </div>
 </div>
   <div class="bookings-received">
       <h1 class="p-3">Bookings received</h1>
 
-    <% if !@bookings.empty? %>
       <div class="row">
             <% @bookings_received.each do |booking| %>
             <% if booking.plant.user.email == current_user.email %>
@@ -60,7 +57,6 @@
                 <% end %>
             </div>
             <% end %>
-    <% end %>
   </div>
 
 </div>
