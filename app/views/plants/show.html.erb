@@ -12,7 +12,12 @@
         <h2><%= @plant.name %></h2>
         <p><strong><%= @plant.address %></strong></p>
         <p><%= @plant.description %></p>
-        <p><%= @plant.price %>€/ day</p>
+        <div class="booking-details d-flex">
+            <div class="rental-duration mb-2">
+              <p><%= @plant.price %>€/day</p>
+            </div>
+          </div>
+
     <hr>
 
 
