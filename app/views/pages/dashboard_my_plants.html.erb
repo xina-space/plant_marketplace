@@ -12,6 +12,8 @@
           <h2 class="card-title"><%= plant.name %></h2>
           <p class="card-address"><strong><%= plant.address %></strong></p>
           <p class="card-text"> <%= plant.description %></p>
+          <%= link_to "Update", edit_plant_path(plant), class:'btn btn-warning' %>
+          <%= link_to "Destroy", @plant, method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-danger' %>
       </div>
     </div>
       </div>

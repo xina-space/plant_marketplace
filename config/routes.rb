@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :plants do
     resources :bookings, only: %i[new create]
+    resources :reviews, only: %i[new create]
   end
-
+  resources :reviews, only: :destroy
   resources :bookings, only: %i[update]
 
   get "dashboard", to: "pages#dashboard"

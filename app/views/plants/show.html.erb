@@ -17,11 +17,21 @@
 
     <div class="show-buttons">
       <% if @plant.user_id == current_user.id %>
-        <%= "" %>
+        <%= link_to "Update", edit_plant_path(@plant), class:'btn btn-warning' %>
+        <%= link_to "Destroy", @plant, method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-danger' %>
       <% else %>
       <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
         Book now
       </button>
+      <%= link_to 'Add a review', new_plant_review_path(@plant) %>
+      <% end %>
+    </div>
+    <div class="show-reviews">
+      <% @reviews_last.each do |rev| %>
+        <p><strong><%= rev.user.email %>
+        <br>
+        </strong><em>Review: "<%= rev.content %>"</em> |
+        Rating: <strong><%= rev.rating%></strong>⭐</p>
       <% end %>
     </div>
     </div>

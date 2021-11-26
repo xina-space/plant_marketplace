@@ -4,6 +4,7 @@ class Plant < ApplicationRecord
   belongs_to :user
   has_many_attached :photos
   has_many :bookings, dependent: :destroy
+  has_many :reviews, dependent: :destroy
   validates :photos, presence: true
   include PgSearch::Model
   pg_search_scope :search_by_name_species_address,
