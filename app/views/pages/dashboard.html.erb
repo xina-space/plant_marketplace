@@ -1,19 +1,62 @@
+<div class="container">
+  <div class="bookings-placed border-bottom border-primary my-4">
 
-  <h2>Pedidos enviados - Plantas de outros</h2>
-  <% @bookings.each do |booking| %>
-  <p><%= booking.plant.name %></p>
-  <p>Owner: <%= booking.plant.user.email %></p>
-  <p><%= booking.start_date %></p>
-  <p><%= booking.end_date %></p>
-  <% end %>
-  <hr>
+      <h1 class="p-3">Bookings placed</h1>
+      <div class="row">
+            <% @bookings.each do |booking| %>
+            <div class="col-lg-6 col-sm-12">
+              <div class="card my-3" id="dash-card">
+              <div class="top-card">
+                  <h4 class="inside-top-card">From <%= booking.start_date %> to <%= booking.end_date %></h4>
+              </div>
+              <%= link_to plant_path(booking.plant) do %>
+              <%= cl_image_tag booking.plant.photos.first.key, class: 'card-img-top' %>
+              <%#= image_tag 'succulent', class: 'card-img-top' %>
+                <div class="card-body d-flex">
+                <div class="title pr-4">
+                  <h3 class="card-text"> <%= booking.plant.species %></h3>
+                  <h2 class="card-title"><%= booking.plant.name %></h2>
+                </div>
+                <div class="description mx-4">
+                  <p class="card-text pb-3 border-bottom border-cool"> <%= booking.plant.description %></p>
+                  <p>Owner contact | <%= booking.plant.user.email %></p>
+                </div>
+                </div>
+            </div>
+                <% end %>
+            </div>
+            <% end %>
+  </div>
+</div>
+  <div class="bookings-received">
+      <h1 class="p-3">Bookings received</h1>
 
-  <h2>Pedidos recebidos - As minhas plantas</h2>
-  <% @bookings_received.each do |booking_rec| %>
-  <% if booking_rec.plant.user.email == current_user.email %>
-  <p><%= booking_rec.plant.name %></p>
-  <p>User: <%= booking_rec.user.email %></p>
-  <p><%= booking_rec.start_date %></p>
-  <p><%= booking_rec.end_date %></p>
-  <% end %>
-  <% end %>
+      <div class="row">
+            <% @bookings_received.each do |booking| %>
+            <% if booking.plant.user.email == current_user.email %>
+            <div class="col-lg-6 col-sm-12">
+              <div class="card my-3" id="dash-card">
+              <div class="top-card-book-received">
+                  <h4 class="inside-top-card">From <%= booking.start_date %> to <%= booking.end_date %></h4>
+              </div>
+              <%= link_to plant_path(booking.plant) do %>
+              <%= cl_image_tag booking.plant.photos.first.key, class: 'card-img-top' %>
+              <%#= image_tag 'succulent', class: 'card-img-top' %>
+                <div class="card-body d-flex">
+                <div class="title pr-4">
+                  <h3 class="card-text"> <%= booking.plant.species %></h3>
+                  <h2 class="card-title"><%= booking.plant.name %></h2>
+                </div>
+                <div class="description mx-4">
+                  <p class="card-text pb-3 border-bottom border-cool"> <%= booking.plant.description %></p>
+                  <p>Owner contact | <%= booking.plant.user.email %></p>
+                </div>
+                </div>
+            </div>
+                <% end %>
+                <% end %>
+            </div>
+            <% end %>
+  </div>
+
+</div>
