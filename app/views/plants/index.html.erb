@@ -21,31 +21,29 @@
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-      <div class="row p-3">
-         <% @plants.each do |plant| %>
-         <% if plant.user_id != current_user.id %>
-         <div class="col-lg-4 col-sm-12">
-          <div class="card my-3">
-          <%= link_to plant_path(plant) do %>
-          <% if plant.photos.attached? %>
-            <%= cl_image_tag plant.photos.first.key, class: 'card-img-top' %>
-          <% else %>
-            <%= image_tag 'succulent', class: 'card-img-top' %>
-          <% end %>
-            <div class="card-body">
-              <h3 class="card-text"> <%= plant.species %></h3>
-              <h2 class="card-title"><%= plant.name %></h2>
+    <div class="row p-3">
+      <% @plants.each do |plant| %>
+          <div class="col-lg-4 col-sm-12">
+            <div class="card my-3">
+              <%= link_to plant_path(plant) do %>
+              <% if plant.photos.attached? %>
+                <%= cl_image_tag plant.photos.first.key, class: 'card-img-top' %>
+              <% else %>
+                <%= image_tag 'succulent', class: 'card-img-top' %>
+              <% end %>
+                <div class="card-body">
+                  <h3 class="card-text"> <%= plant.species %></h3>
+                  <h2 class="card-title"><%= plant.name %></h2>
 
-              <p class="card-text"> <%#= plant.description %></p>
-                <% if policy(plant).edit? %>
-                <%= link_to "Edit", edit_plant_path(plant), class: 'btn-ghost' %>
-                <%= link_to "Delete", plant, method: :delete, data: {confirm: "Are you sure?"}, class: 'btn-ghost' %>
-                <% end %>
-            </div>
-         <% end %>
+                  <p class="card-text"> <%#= plant.description %></p>
+                    <% if policy(plant).edit? %>
+                    <%= link_to "Edit", edit_plant_path(plant), class: 'btn-ghost' %>
+                    <%= link_to "Delete", plant, method: :delete, data: {confirm: "Are you sure?"}, class: 'btn-ghost' %>
+                    <% end %>
+                </div>
+          <% end %>
          </div>
-         </div>
-            <% end %>
-         <% end %>
+        </div>
+      <% end %>
       </div>
    </div>
