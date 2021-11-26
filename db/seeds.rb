@@ -40,7 +40,7 @@ plant4 = Plant.new(species: "Yucca", name: "Mona", address: "Madrid, Spain", des
 file = URI.open('https://tpn-1.s3.eu-west-2.amazonaws.com/media/217/217-Page38-anca-gabriela-zosin-f3e9p4-lqRw-unsplash.jpeg')
 plant4.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 plant4.save
-plant5 = Plant.new(species: "Ficus", name: "Bruce", address: "Rua do Conde de Redondo 91B, 1150-103 Lisboa, Portugal", description: "Don't let his looks decieve you. Bruce is a ninja. Adapts to any corner, lounge, bathroom and bedroom. His moto: Be water my friend", user_id: user2.id, price: 45.00)
+plant5 = Plant.new(species: "Ficus", name: "Bruce", address: "R. Augusta, 213, Lisbon, Portugal", description: "Don't let his looks decieve you. Bruce is a ninja. Adapts to any corner, lounge, bathroom and bedroom. His moto: Be water my friend", user_id: user2.id, price: 45.00)
 file = URI.open('https://bloomscape.com/wp-content/uploads/2020/05/bloomscape_ficus-altissima-std_charcoal.jpg')
 plant5.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 plant5.save
